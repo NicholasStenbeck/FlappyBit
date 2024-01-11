@@ -1,0 +1,49 @@
+{
+    "version": 1,
+    "author": "Anonymous maker",
+    "editor": "wokwi",
+    "parts": [
+      { "type": "wokwi-attiny85", "id": "tiny", "top": -222, "left": -42.4, "attrs": {} },
+      {
+        "type": "board-ssd1306",
+        "id": "oled1",
+        "top": -342.46,
+        "left": -76.57,
+        "attrs": { "i2cAddress": "0x3c" }
+      },
+      {
+        "type": "wokwi-pushbutton",
+        "id": "btn1",
+        "top": -118.6,
+        "left": 48,
+        "attrs": { "color": "green" }
+      },
+      {
+        "type": "wokwi-led",
+        "id": "led1",
+        "top": -214.8,
+        "left": -217,
+        "attrs": { "color": "red" }
+      },
+      {
+        "type": "wokwi-resistor",
+        "id": "r1",
+        "top": -149.35,
+        "left": -174.2,
+        "rotate": 180,
+        "attrs": { "value": "330" }
+      }
+    ],
+    "connections": [
+      [ "tiny:VCC", "oled1:VCC", "red", [ "v-8.4", "h-86.4", "v-124.8", "h95.85" ] ],
+      [ "oled1:GND", "tiny:GND", "black", [ "h-67.2", "v172.8", "h97.2" ] ],
+      [ "oled1:SCL", "tiny:PB2", "green", [ "v-38.4", "h67.5", "v134.4", "h-76.4" ] ],
+      [ "oled1:SDA", "tiny:PB0", "green", [ "v-28.8", "h86.47", "v134.4", "h-85.2" ] ],
+      [ "btn1:1.l", "tiny:GND", "black", [ "h-38.4", "v-96" ] ],
+      [ "r1:2", "led1:A", "green", [ "v0" ] ],
+      [ "r1:1", "tiny:PB3", "green", [ "h86.4", "v0", "h0.4" ] ],
+      [ "led1:C", "tiny:GND", "black", [ "v86.4", "h154", "v0", "h39.6" ] ],
+      [ "tiny:PB1", "btn1:2.r", "violet", [ "v-27.6", "h152.8", "v163" ] ]
+    ],
+    "dependencies": {}
+  }
